@@ -1,0 +1,54 @@
+# Dependencies / Packages
+/node_modules
+/vendor
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+/auth.json
+/storage/*.key
+*.pem
+*.key
+*.crt
+
+# Build, Hot Reload & Storage Artifacts
+/public/build
+/public/hot
+/public/storage
+/storage/pail
+/bootstrap/cache/*.php
+!/bootstrap/cache/.gitignore
+
+# Caches, Logs & Test Artifacts
+/.phpunit.cache
+.phpunit.result.cache
+.phpactor.json
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db
+
+# Backups & Temporary Files
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+
+# Local VM / IDE / OS Files
+Homestead.json
+Homestead.yaml
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+.DS_Store
+Thumbs.db

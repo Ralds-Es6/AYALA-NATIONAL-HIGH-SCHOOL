@@ -1,0 +1,163 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+        './resources/**/*.blade.php',
+        './resources/**/*.{js,jsx,ts,tsx}',
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Inter', '"Plus Jakarta Sans"', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                navy: {
+                    DEFAULT: '#0F172A',
+                    50: '#F8FAFC',
+                    100: '#F1F5F9',
+                    800: '#1E293B',
+                    900: '#0F172A',
+                    950: '#0A1628',
+                    dark: '#0A192F',
+                    deep: '#0F2744',
+                    header: '#1A3060',
+                },
+                royal: {
+                    DEFAULT: '#1E3A8A',
+                    50: '#EFF6FF',
+                    100: '#DBEAFE',
+                    200: '#BFDBFE',
+                    300: '#93C5FD',
+                    400: '#60A5FA',
+                    500: '#3B82F6',
+                    600: '#2563EB',
+                    700: '#1D4ED8',
+                    800: '#1E40AF',
+                    900: '#1E3A8A',
+                    950: '#172554',
+                },
+                gold: {
+                    DEFAULT: '#F59E0B',
+                    50: '#FFFBEB',
+                    100: '#FEF3C7',
+                    200: '#FDE68A',
+                    300: '#FCD34D',
+                    400: '#FBBF24',
+                    500: '#F59E0B',
+                    600: '#D97706',
+                    700: '#B45309',
+                    800: '#92400E',
+                    900: '#78350F',
+                },
+                forest: {
+                    DEFAULT: '#00563F',
+                    dark: '#004230',
+                    light: '#057A5B',
+                },
+                teal: {
+                    DEFAULT: '#0D9488',
+                    50: '#F0FDFA',
+                    100: '#CCFBF1',
+                    200: '#99F6E4',
+                    300: '#5EEAD4',
+                    400: '#2DD4BF',
+                    500: '#14B8A6',
+                    600: '#0D9488',
+                    700: '#0F766E',
+                    800: '#115E59',
+                    900: '#134E4A',
+                },
+                cyan: {
+                    DEFAULT: '#06B6D4',
+                    50: '#ECFEFF',
+                    100: '#CFFAFE',
+                    200: '#A5F3FC',
+                    300: '#67E8F9',
+                    400: '#22D3EE',
+                    500: '#06B6D4',
+                    600: '#0891B2',
+                    700: '#0E7490',
+                },
+                appBg: '#F8FAFC',
+                appSurface: '#FFFFFF',
+                appText: '#0F172A',
+                appMuted: '#64748B',
+                appSuccess: '#16A34A',
+                appWarning: '#D97706',
+                appError: '#DC2626',
+            },
+            boxShadow: {
+                'glow': '0 0 20px rgba(13, 148, 136, 0.2)',
+                'gold-glow': '0 0 24px rgba(245, 158, 11, 0.25)',
+                'royal-glow': '0 4px 20px rgba(30, 58, 138, 0.35)',
+                'card-hover': '0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04)',
+            },
+            borderRadius: {
+                'xl': '12px',
+                '2xl': '16px',
+                '3xl': '20px',
+            },
+            fontSize: {
+                // Slightly larger small sizes for legibility on Windows / scaled displays
+                'xs': ['0.78125rem', { lineHeight: '1.15rem' }],
+                'sm': ['0.875rem', { lineHeight: '1.3rem' }],
+            },
+            animation: {
+                'toast-enter': 'toastSlideIn 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'toast-exit': 'toastSlideOut 150ms ease-in forwards',
+                'modal-fade-in': 'modalFadeIn 200ms ease-out forwards',
+                'modal-fade-out': 'modalFadeOut 150ms ease-in forwards',
+                'modal-scale-in': 'modalScaleIn 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                'modal-scale-out': 'modalScaleOut 150ms ease-in forwards',
+                'mascot-breathe': 'mascotBreathe 3.6s ease-in-out infinite',
+                'mascot-shake': 'mascotShake 240ms ease-in-out',
+                'live-pulse': 'livePulse 2s infinite ease-in-out',
+            },
+            keyframes: {
+                toastSlideIn: {
+                    from: { opacity: '0', transform: 'translateX(24px) scale(0.97)' },
+                    to: { opacity: '1', transform: 'translateX(0) scale(1)' },
+                },
+                toastSlideOut: {
+                    from: { opacity: '1', transform: 'translateX(0) scale(1)' },
+                    to: { opacity: '0', transform: 'translateX(20px) scale(0.97)' },
+                },
+                modalFadeIn: {
+                    from: { opacity: '0' },
+                    to: { opacity: '1' },
+                },
+                modalFadeOut: {
+                    from: { opacity: '1' },
+                    to: { opacity: '0' },
+                },
+                modalScaleIn: {
+                    from: { opacity: '0', transform: 'scale(0.95)' },
+                    to: { opacity: '1', transform: 'scale(1)' },
+                },
+                modalScaleOut: {
+                    from: { opacity: '1', transform: 'scale(1)' },
+                    to: { opacity: '0', transform: 'scale(0.95)' },
+                },
+                mascotBreathe: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-1.5px)' },
+                },
+                mascotShake: {
+                    '0%': { transform: 'translateX(0)' },
+                    '20%': { transform: 'translateX(-3px)' },
+                    '40%': { transform: 'translateX(3px)' },
+                    '60%': { transform: 'translateX(-2px)' },
+                    '80%': { transform: 'translateX(1.5px)' },
+                    '100%': { transform: 'translateX(0)' },
+                },
+                livePulse: {
+                    '0%': { transform: 'scale(0.95)', opacity: '0.8' },
+                    '50%': { transform: 'scale(1.08)', opacity: '1' },
+                    '100%': { transform: 'scale(0.95)', opacity: '0.8' },
+                },
+            },
+        },
+    },
+    plugins: [],
+};
